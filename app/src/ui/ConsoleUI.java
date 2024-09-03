@@ -3,9 +3,11 @@ package ui;
 import business.Library;
 import business.Book;
 import business.Magazine;
+import util.DateUtils;
 
 import java.util.Scanner;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.time.Instant;
 
 public class ConsoleUI {
@@ -30,6 +32,7 @@ public class ConsoleUI {
     }
 
     private void displayMenu() {
+        System.out.println("  ");
         System.out.println("--------------------------------------------------------------");
         System.out.println("                 Library Management System                   -");
         System.out.println("-                                                            -");
@@ -40,6 +43,7 @@ public class ConsoleUI {
         System.out.println("-  5. Search for a document                                  -");
         System.out.println("-  6. Exit                                                   -");
         System.out.println("--------------------------------------------------------------");
+        System.out.println("  ");
     }
 
     private int getUserChoice() {
@@ -98,8 +102,17 @@ public class ConsoleUI {
         System.out.print("Enter author: ");
         String author = scanner.nextLine();
 
-        System.out.print("Enter publication date (YYYY-MM-DD): ");
-        LocalDate date = LocalDate.parse(scanner.nextLine());
+        System.out.print("Enter publication date (DD/MM/YYYY): ");
+        String inputDate = scanner.nextLine();
+        LocalDate date;
+        if (DateUtils.isValiDate(inputDate)) {
+            date = LocalDate.parse(inputDate, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        } else {
+            System.out.println(" ");
+            System.out.println("[-] Invalide Date, try a valide date next time!");
+            System.out.println(" ");
+            return;
+        }
 
         System.out.print("Enter number of pages: ");
         int pages = scanner.nextInt();
