@@ -32,17 +32,6 @@ public abstract class Document {
         this.numberOfPages = numberOfPages;
     }
 
-    public Object[] getDoc() {
-        return new Object[] { id, title, author, publicationDate, numberOfPages };
-    }
-
-    public void setDoc(String title, String author, LocalDate publicationDate, int numberOfPages) {
-        this.title = title;
-        this.author = author;
-        this.publicationDate = publicationDate;
-        this.numberOfPages = numberOfPages;
-    }
-
     public String getId() {
         return this.id;
     }
