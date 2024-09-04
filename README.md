@@ -84,10 +84,9 @@ This project involves the development of a console-based application in Java 8 t
     ```bash
     javac -d bin src/**/*.java
 
-    ```bash
     java -cp bin ConsoleUI
 
-3. Or simple run this command: 
+3. Or simply run the command: 
     ```bash
       & 'C:\Program Files\Java\jdk-22\bin\java.exe' '--enable-preview' '-XX:+ShowCodeDetailsInExceptionMessages' '-cp' 'C:\Users\moham\AppData\Roaming\Code\User\workspaceStorage\8fa2ba723ae0dfee18a1dc5e309b25ea\redhat.java\jdt_ws\LibraryManager-JavaConsoleApp_69e95885\bin' 'Main'
 
