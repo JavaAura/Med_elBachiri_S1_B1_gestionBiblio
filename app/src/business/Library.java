@@ -39,22 +39,6 @@ public class Library {
         }
     }
 
-    public void tableStyleUp() {
-        System.out.println(" ");
-        System.out.println(
-                "----------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-25s | %-15s | %-10s | %-15s%n", "Type", "ID", "Title",
-                "Author", "Bup Date", "Num of Pages", "Borrowed", "Details");
-        System.out.println(
-                "----------------------------------------------------------------------------------------------------------------------------------------------------------");
-    }
-
-    public void tableStyleDown() {
-        System.out.println(
-                "-----------------------------------------------------------------------------------------------------------------------------------------------------------");
-        System.out.println(" ");
-    }
-
     public void displayAllDocuments() {
         tableStyleUp();
         for (Document document : documents) {
@@ -98,5 +82,23 @@ public class Library {
                 .collect(Collectors.toList());
             filteredDocs.forEach(Document::displayDetails);
         tableStyleDown();
+    }
+
+
+    // table upper and down styles
+    public void tableStyleUp() {
+        System.out.println(" ");
+        System.out.println(
+                "----------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%-10s | %-15s | %-20s | %-20s | %-25s | %-15s | %-10s | %-15s%n", "Type", "ID", "Title",
+                "Author", "Bup Date", "Num of Pages", "Borrowed", "Details");
+        System.out.println(
+                "----------------------------------------------------------------------------------------------------------------------------------------------------------");
+    }
+
+    public void tableStyleDown() {
+        System.out.println(
+                "-----------------------------------------------------------------------------------------------------------------------------------------------------------");
+        System.out.println(" ");
     }
 }
