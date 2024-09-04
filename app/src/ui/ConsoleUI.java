@@ -69,7 +69,7 @@ public class ConsoleUI {
     }
 
     private void handleChoice(int choice) {
-        scanner.nextLine();
+        scanner.nextLine(); // consume the new line
         switch (choice) {
             case 1:
                 addDocument();
@@ -90,7 +90,7 @@ public class ConsoleUI {
                 System.out.println(">>> Exiting...");
                 break;
             case 7:
-                start();
+                clear();
                 break;
             default:
                 System.out.println("[-] Invalid choice. Please enter a number between 1 and 6.");
